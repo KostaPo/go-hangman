@@ -1,0 +1,37 @@
+# === Go binaries ===
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+
+# Coverage output
+*.out
+coverage.out
+
+# Go modules workspace
+go.work
+go.work.sum
+
+# Vendor (если не используешь vendoring)
+vendor/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# === VS Code ===
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# === OS ===
+.DS_Store
+Thumbs.db
