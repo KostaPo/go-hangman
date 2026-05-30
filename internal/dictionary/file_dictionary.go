@@ -2,9 +2,10 @@ package dictionary
 
 import (
 	"bufio"
+	"hangman/assets"
 	"hangman/internal/word"
 	"math/rand"
-	"os"
+	"strings"
 )
 
 type FileDictionary struct {
@@ -32,18 +33,9 @@ func (d *FileDictionary) GetRandomWord() *word.Word {
 }
 
 func readWordsFromFile() ([]string, error) {
-
-	file, err := os.Open("assets/words.txt")
-
-	if err != nil {
-		return nil, err
-	}
-
-	defer file.Close()
-
 	var wordsFromFile []string
 
-	scanner := bufio.NewScanner(file)
+	scanner := bufio.NewScanner(strings.NewReader(assets.WordsFile))
 	for scanner.Scan() {
 		if word := scanner.Text(); word != "" {
 			wordsFromFile = append(wordsFromFile, word)

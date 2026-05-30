@@ -1,5 +1,10 @@
 package assets
 
+import _ "embed"
+
+//go:embed words.txt
+var WordsFile string
+
 var HangmanStages = [6]string{
 	// 0 ошибок — пустая виселица
 	" +---+   \n" +
